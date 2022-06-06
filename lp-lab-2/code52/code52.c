@@ -37,6 +37,10 @@ bool isPrime(int value){
     do {
         if (value % i == 0)
             aux++;
+
+        if (aux > 2)
+            return 0;
+
         i++;
     } while (i <= value);
 
