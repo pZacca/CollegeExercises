@@ -4,7 +4,7 @@
     Curso - Bacharelado em Ciencia e Tecnologia
     Semestre - 1.
 
-    Exercise: Verifies if the year given by the user is a leap year using ternary operators
+    Exercise: Verifies if the year given by the user is a leap year
 */
 
 // Preprocessing directives
@@ -21,9 +21,12 @@ int main(void) {
         printf("\nPlease enter a year greater than zero:\n");
     }
 
-    year % 100 == 0 && year % 400 != 0 ? printf("\nNot a leap year.") :
-                                        (year % 4 == 0) ? printf("\nIt's a leap year.") :
-                                        printf("\nNot a leap year.");
+    if (year % 100 == 0 && year % 400 != 0)
+        printf("\nNot a leap year.");
+    else if (year % 4 == 0)
+        printf("\nIt's a leap year.");
+    else
+        printf("\nNot a leap year.");
 
     return 0;
 }
