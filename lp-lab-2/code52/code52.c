@@ -33,16 +33,12 @@ int main(void){
 
 // Other functions
 bool isPrime(int value){
-    int i, aux = 1;
-    if(value == 1)
-        return 0;
+    int i = 1, aux = 0;
+    do {
+        if (value % i == 0)
+            aux++;
+        i++;
+    } while (i <= value);
 
-    for (i = (value - 1); i > 1; i--){
-        if (value % i == 0) {
-            aux = 0;
-            break;
-        }
-    }
-
-    return aux;
+    return (aux == 2) ? 1 : 0;
 }
