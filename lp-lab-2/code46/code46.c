@@ -43,16 +43,17 @@ int main(void) {
 
 // Other functions
 bool isPrime(int value){
-    int i, aux = 1;
-    if(value == 1)
-        return 0;
+    int i, aux = 0;
 
-    for (i = (value - 1); i > 1; i--){
-        if (value % i == 0) {
-            aux = 0;
-            break;
-        }
+    for (i = 1; i < value;){
+        if (value % i == 0)
+            aux++;
+
+        if (aux > 1)
+            return 0;
+
+        i += 2;
     }
 
-    return aux;
+    return (aux == 1) ? 1 : 0;
 }
