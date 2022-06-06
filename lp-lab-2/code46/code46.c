@@ -44,6 +44,9 @@ int main(void) {
 // Other functions
 bool isPrime(int value){
     int i, aux = 1;
+    if(value == 1)
+        return aux;
+    
     for (i = (value - 1); i > 1; i--){
         if (value % i == 0) {
             aux = 0;
